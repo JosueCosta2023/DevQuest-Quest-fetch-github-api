@@ -12,10 +12,7 @@ const scream = {
                     <p>
                     ${user.bio ?? 'Não possui biografia cadastrada 😭'}
                     </p>
-
-                    <p>
-                    Repositorios: ${user.public_repos ?? 'Não publicou nenhum repositorio até o momento.'}
-                    </p> 
+ 
                 </div>
             </div>`
 
