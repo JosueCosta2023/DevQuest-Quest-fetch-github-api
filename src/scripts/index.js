@@ -1,6 +1,14 @@
+
+import { getUser } from "/src/scripts/services/user.js";
+import { getRepositories } from "/src/scripts/services/repositories.js";
+import { user } from "/src/scripts/objects/user.js";
+import { scream } from "/src/scripts/objects/scream.js";
+
+
 document.getElementById('btn-search').addEventListener('click', () =>{
     const userName = document.getElementById('input-search').value
-    getUserProfile(userName);
+    if(validateEmptyInput(userName)) return
+    getUserData(userName);
 })
 
 document.getElementById('input-search').addEventListener('keyup', (e) =>{
@@ -8,67 +16,34 @@ document.getElementById('input-search').addEventListener('keyup', (e) =>{
     const key = e.which || e.keyCode;
     const isEnterKeyPressed = key === 13;
     if(isEnterKeyPressed){
-        getUserProfile(userName);
+        if(validateEmptyInput(userName)) return
+        getUserData(userName);
     }
     
 })
 
-async function user(userName){
-    const response = await fetch(`https://api.github.com/users/${userName}`);
-    return await response.json();
+function validateEmptyInput(userName){
+    if(userName.length === 0){
+        alert("Preencha o campo com o nome do usuario do Github")
+        return true;
+    }
 }
 
-async function repos(userName){
-    const response = await fetch(`https://api.github.com/users/${userName}/repos`);
-    return await response.json();
+async function getUserData(userName){
+    const userResponse = await getUser(userName);
+
+    if(userResponse.message === "Not Found"){
+        scream.renderNotFound()
+        return
+    }
+
+    const repositoriesResponse = await getRepositories(userName);
+    user.setInfo(userResponse)
+    user.setRepositories(repositoriesResponse)
+
+    scream.renderUser(user);
 }
 
-function getUserProfile(userName){
-    user(userName).then(userData => {
-        let userInfo = 
-            `
-            <div class="info">
-                <img src="${userData.avatar_url}" alte="Foto de Perfil"/>
-                <div class="data">
-                    <h1>
-                    ${userData.name ?? 'Não possui nome cadastrado 😭'}
-                    </h1>
-
-                    <p>
-                    ${userData.bio ?? 'Não possui biografia cadastrada 😭'}
-                    </p>
-
-                    <p>
-                    Repositorios: ${userData.public_repos ?? 'Não publicou nenhum repositorio até o momento.'}
-                    </p> 
-                </div>
-            </div>`
-        document.querySelector(".profile-data").innerHTML = userInfo;
-
-        getUserRepositories(userName);
-    })
-}
-
-function getUserRepositories(userName){
-    repos(userName).then(reposData => {
-        let repositoriesItens = "";
-
-        reposData.forEach(repo => {
-            repositoriesItens += 
-            `<li>
-                <a href="${repo.html_url}" target="_blank">${repo.name}
-                </a>
-            </li>`
-        })
-
-        document.querySelector(".profile-data").innerHTML += 
-            `<div class="repositories section">
-                <h2>Repositórios</h2>
-                <ul>${repositoriesItens}</ul>
-            </div>`
-
-    })
-}
 
 
 
