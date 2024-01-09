@@ -12,7 +12,11 @@ const scream = {
                     <p>
                     ${user.bio ?? 'Não possui biografia cadastrada 😭'}
                     </p>
- 
+
+                    <p>Seguindo: ${user.userFllowing}</p>
+
+                    <p>Seguidores: ${user.userFllowers}</p>
+                   
                 </div>
             </div>`
 

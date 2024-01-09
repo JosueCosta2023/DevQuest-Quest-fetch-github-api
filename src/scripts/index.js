@@ -19,7 +19,7 @@ document.getElementById('input-search').addEventListener('keyup', (e) =>{
         if(validateEmptyInput(userName)) return
         getUserData(userName);
     }
-    
+
 })
 
 function validateEmptyInput(userName){
@@ -44,6 +44,14 @@ async function getUserData(userName){
     scream.renderUser(user);
 }
 
-
-
-
+/* 
+    Novos objetivos no projeto
+    Número de seguidores 
+    Número de seguindo
+    10 últimos eventos do usuário no GitHub. CreateEvent e PushEvent apenas
+    Quantidade de forks do repositório
+    Quantidade de estrelas do repositório
+    Quantidade de watchers do repositório
+    Mostrar a linguagem de programação do
+    repositório
+*/
