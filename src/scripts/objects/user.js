@@ -6,6 +6,7 @@ const user = {
     userFllowers: '',
     userFloowing: '',
     repositories: [],
+    events: [],
 
     setInfo(gitHubUser){
         this.avatarUrl = gitHubUser.avatar_url;
@@ -18,7 +19,12 @@ const user = {
 
     setRepositories(repositories){
         this.repositories = repositories;
+    },
+
+    setEvents(eventsResponse){
+        this.events = eventsResponse;
     }
 }
 
 export { user }
+

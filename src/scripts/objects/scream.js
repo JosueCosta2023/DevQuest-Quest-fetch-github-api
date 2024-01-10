@@ -13,12 +13,30 @@ const scream = {
                     ${user.bio ?? 'Não possui biografia cadastrada 😭'}
                     </p>
 
+                    <div class="section follow">
+                    <p>Seguidores: ${user.userFllowers} </p>
                     <p>Seguindo: ${user.userFllowing}</p>
-
-                    <p>Seguidores: ${user.userFllowers}</p>
+                    </div>
                    
                 </div>
             </div>`
+
+        let eventsItens = '';
+
+        user.events.forEach(event => eventsItens += 
+        `<li class="text">
+        ${event.repo.name} 
+        <span class="text-light">
+        </span>        
+        </li>`);
+
+
+        this.userProfile.innerHTML += `
+        <div class="section-event">
+            <h2>Ultimas atualizações</h2>
+            <ul>${eventsItens}</ul>
+        </div>`
+        
 
         let repositoriesItens = '';
         user.repositories.forEach(repo => repositoriesItens += `<li>

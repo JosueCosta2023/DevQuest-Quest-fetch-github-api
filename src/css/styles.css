@@ -34,6 +34,28 @@ main {
   padding: 70px 0;
 }
 
+.section.follow{
+  display: flex;
+  justify-content: space-between;
+  padding:0 50px;
+  gap: 20px;
+  margin-top: 20px;
+}
+.section-event h2{
+  margin: 50px ;
+}
+
+.text{
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.text-light{
+  color: grey;
+  font-weight: lighter;
+  margin-left: 20px;
+}
+
 .container {
   width: 60%; /* se for uma tela menor que 980px vai se adaptar a 70% */
   max-width: 960px; /* quando chegar em 980px para de aumentar */
