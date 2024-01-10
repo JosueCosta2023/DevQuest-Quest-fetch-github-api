@@ -15,7 +15,7 @@
     * Forks
     * Estrelas
     * Whatchers 
-    * Linguagens de programação do usuário
+    * Linguagens de programação do repositório
 * Código deve ser padronizado e limpo
     * Utilize refatoração
 
@@ -25,10 +25,16 @@
 * Logica de programação
 
 ## O que aprendi?
+* Neste projeto aprendi que as veses a solução é mais simples do que imaginamos, normalmente costumo pensar em soluções complexas para problemas aparentemente simples. Durante o todo o processo de desenvolvimento deste sistema pude ver a solução por uma perspequitiva mais simples e obtive exito no desenvolvimento sem muita dor de cabeça.
 
+* Em termos de JavaScript, utilizei o INNERHTML e FUNÇÕES com mais frequência e agora me sinto mais familiarisado com a liguagem. 
 
 ### Screenshots
+#### Visualização Desktop
+![Desktop](./src/archives/desktop.gif)
 
+#### Visualização Mobile
+![Mobile](./src/archives/mobile.gif)
 
 
 # Author
