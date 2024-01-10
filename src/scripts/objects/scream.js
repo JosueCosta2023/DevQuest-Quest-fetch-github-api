@@ -22,14 +22,17 @@ const scream = {
             </div>`
 
         let eventsItens = '';
+        user.events.forEach((event) => {
+            if(event.payload.commits){
+                eventsItens += `<li class="text">
+                 ${event.repo.name} 
+                 <span class="text-light">
+                     ${event.payload.commits[0].message}
+                 </span>        
+                 </li>`
+            }
 
-        user.events.forEach(event => eventsItens += 
-        `<li class="text">
-        ${event.repo.name} 
-        <span class="text-light">
-        </span>        
-        </li>`);
-
+        })
 
         this.userProfile.innerHTML += `
         <div class="section-event">

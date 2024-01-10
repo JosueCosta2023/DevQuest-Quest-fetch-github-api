@@ -6,7 +6,9 @@ const user = {
     userFllowers: '',
     userFloowing: '',
     repositories: [],
-    events: [],
+    events: [
+        
+    ],
 
     setInfo(gitHubUser){
         this.avatarUrl = gitHubUser.avatar_url;
