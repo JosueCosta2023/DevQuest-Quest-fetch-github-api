@@ -31,7 +31,6 @@ const scream = {
                  </span>        
                  </li>`
             }
-
         })
 
         this.userProfile.innerHTML += `
@@ -42,9 +41,32 @@ const scream = {
         
 
         let repositoriesItens = '';
-        user.repositories.forEach(repo => repositoriesItens += `<li>
-        <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+        user.repositories.forEach(repo => repositoriesItens += 
+        `<li>
+            <a href="${repo.html_url}" target="_blank">${repo.name}>
+            
+                <div class="container-repo-square">
+
+                    <p class="repo-square"> 
+                        <span>🍴</span> <span>${repo.forks}</span>
+                    </p>
+
+                    <p class="repo-square"> 
+                        <span>⭐</span> <span>${repo.stargazers_count}</span>
+                    </p>
+                    <p class="repo-square"> 
+                        <span>👀</span> <span>${repo.watchers}</span>
+                    </p>
+
+                    <p class="repo-square"> 
+                        <span>☕</span> <span>${repo.language}</span>
+                    </p>
+                    
+                </div>
+            </a>
         </li>`)
+
+        console.log(user.repositories)
         
         if(user.repositories.length > 0){
             this.userProfile.innerHTML += 

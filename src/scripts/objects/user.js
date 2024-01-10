@@ -5,7 +5,9 @@ const user = {
     userName: '',
     userFllowers: '',
     userFloowing: '',
-    repositories: [],
+    repositories: [
+    
+    ],
     events: [
         
     ],
@@ -21,6 +23,7 @@ const user = {
 
     setRepositories(repositories){
         this.repositories = repositories;
+
     },
 
     setEvents(eventsResponse){
