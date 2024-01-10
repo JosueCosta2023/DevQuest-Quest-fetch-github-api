@@ -66,8 +66,6 @@ const scream = {
             </a>
         </li>`)
 
-        console.log(user.repositories)
-        
         if(user.repositories.length > 0){
             this.userProfile.innerHTML += 
             `<div class="repositories section">
