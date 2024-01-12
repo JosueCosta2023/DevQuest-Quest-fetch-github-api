@@ -1,9 +1,9 @@
 
-import { getUser } from "./src/scripts/services/user.js";
-import { getRepositories } from "./src/scripts/services/repositories.js";
-import { getEvents } from "./src/scripts/services/events.js";
-import { user } from "./src/scripts/objects/user.js";
-import { scream } from "./src/scripts/objects/scream.js";
+import { getUser } from "/src/scripts/services/user.js";
+import { getRepositories } from "/src/scripts/services/repositories.js";
+import { getEvents } from "/src/scripts/services/events.js";
+import { user } from "/src/scripts/objects/user.js";
+import { scream } from "/src/scripts/objects/scream.js";
 
 
 document.getElementById('btn-search').addEventListener('click', () =>{
@@ -47,14 +47,3 @@ async function getUserData(userName){
     scream.renderUser(user);
 }
 
-/* 
-    Novos objetivos no projeto
-    Número de seguidores 
-    Número de seguindo
-    10 últimos eventos do usuário no GitHub. CreateEvent e PushEvent apenas
-    Quantidade de forks do repositório
-    Quantidade de estrelas do repositório
-    Quantidade de watchers do repositório
-    Mostrar a linguagem de programação do
-    repositório
-*/
